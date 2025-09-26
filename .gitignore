@@ -205,3 +205,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Personal
+portfolio/static/docs/*
+!portfolio/static/docs/*.md
+portfolio/static/images/*
+!portfolio/static/images/*.md
+portfolio/static/uploads/*
+!portfolio/static/uploads/*.md
