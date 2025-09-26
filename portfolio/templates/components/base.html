@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Dev Gabriel Lima{% endblock %}</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS estático -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'images/foto_perfil.jpg' %}" alt="Foto de perfil" class="perfil">
+        </a>
+        <a class="nav-link" href="{% url 'home' %}">Início</a>
+        <a class="nav-link" href="{% url 'about' %}">Sobre Mim</a>
+        <a class="nav-link" href="{% url 'habilities' %}">Habilidades</a>
+        <a class="nav-link" href="{% url 'projects' %}">Projetos</a>
+        <a class="nav-link" href="{% url 'contact' %}">Contato</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

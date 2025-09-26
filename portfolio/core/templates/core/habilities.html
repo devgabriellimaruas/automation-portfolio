@@ -1,0 +1,50 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="habilities">
+        <h1>
+            <span class="pre-title">./</span>
+            <span class="title-text">Habilidades</span>
+        </h1>
+
+        <div class="cards-container">
+            <div class="card">
+                <div class="icon-container">
+                    <img src="{% static 'images/rpa.svg' %}" alt="Ícone Automação">
+                </div>
+                <p><span class="card-title">Automação de Processos Robóticos</span></p>
+                <span class="desc">Desenvolvimento de scripts em Python para automação de tarefas repetitivas.</span>
+                <span class="desc">Integração de APIs para otimização de fluxos de trabalho.</span>
+                <span class="desc">Implementação de soluções RPA utilizando UiPath e Power Automate.</span>
+            </div>
+
+            <div class="card">
+                <div class="icon-container">
+                    <img src="{% static 'images/rpa.svg' %}" alt="Ícone Automação">
+                </div>
+                <p><span class="card-title">Automação de Dados</span></p>
+                <span class="desc">Criação de pipelines de dados para coleta, transformação e carregamento (ETL).</span>
+                <span class="desc">Análise e visualização de dados utilizando Power BI e Excel.</span>
+                <span class="desc">Desenvolvimento de dashboards interativos para monitoramento de KPIs.</span>
+            </div>
+
+            <div class="card">
+                <div class="icon-container">
+                    <img src="{% static 'images/rpa.svg' %}" alt="Ícone Automação">
+                </div>
+                <p><span class="card-title">Automação Empresarial</span></p>
+                <span class="desc">Desenvolver automações de processos empresariais usando ferramentas como UiPath,
+                    Power Automate.</span>
+                <span class="desc">Integrar sistemas corporativos (ERP, CRM, plataformas financeiras) via APIs para
+                    otimização de fluxos de trabalho.</span>
+                <span class="desc">Reduzir tarefas manuais e aumentar eficiência operacional, garantindo processos mais
+                    ágeis e conectados.</span>
+                conectados.
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

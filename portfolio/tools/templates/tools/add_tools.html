@@ -1,0 +1,59 @@
+{% extends "components/base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>
+    <span class="pre-title">./</span>
+    <span class="title-text">Ferramentas</span>
+  </h1>
+
+  <!-- Formulário para adicionar -->
+  <form id="tool-form" class="add-project-form" action="{% url 'post_tool' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Nova ferramenta" required>
+    <a href="#" class="button" onclick="document.getElementById('tool-form').submit(); return false;">
+      Adicionar Ferramenta
+    </a>
+  </form>
+
+  <!-- Lista de ferramentas -->
+  <ul class="tools-list">
+    {% for tool in tools %}
+    <li>
+      <div class="tool-item">
+        <!-- Botões de mover -->
+        <form class="button-group" action="{% url 'move_tool' tool.id %}" method="POST" style="display:inline;">
+          {% csrf_token %}
+          <button name="direction" value="up">
+            <!-- Seta para cima branca -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M12 4l-8 8h6v8h4v-8h6z" />
+            </svg>
+          </button>
+          <button name="direction" value="down">
+            <!-- Seta para baixo branca -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M12 20l8-8h-6v-8h-4v8h-6z" />
+            </svg>
+          </button>
+        </form>
+
+        <!-- Nome da ferramenta e ordem -->
+        <span>{{ tool.order }}º - {{ tool.name }}</span>
+
+        <!-- Botão de excluir -->
+        <form id="delete-tool-{{ tool.id }}" action="{% url 'delete_tool' tool.id %}" method="POST" style="display:inline; margin-left:10px;">
+          {% csrf_token %}
+          <a href="#" class="button"
+            onclick="if(confirm('Tem certeza que deseja excluir esta ferramenta?')) { document.getElementById('delete-tool-{{ tool.id }}').submit(); } return false;">
+            🗑️ Excluir
+          </a>
+        </form>
+      </div>
+    </li>
+    {% empty %}
+    <li>Nenhuma ferramenta cadastrada.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

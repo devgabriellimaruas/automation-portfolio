@@ -1,0 +1,45 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="about-content">
+        <div class="about">
+            <h1>
+                <span class="pre-title">./</span>
+                <span class="title-text">Sobre Mim</span>
+            </h1>
+            <p><span class="desc">Sou desenvolvedor Python com especialização em </span>
+                <span class="desc-sb">automação de processos robóticos</span>
+                <span class="desc"> (RPA) e criação de RestAPIs para integrar e </span>
+                <span class="desc-sb">potencializar essas automações</span>
+                <span class="desc">.</span>
+            </p>
+            <p>
+                <span class="desc">Iniciei minha jornada acadêmica em Gestão de TI, mas logo migrei para</span>
+                <span class="desc-sb">Sistemas de Informação</span>
+                <span class="desc">. Foi nessa transição que descobri minha</span>
+                <span class="desc-sb">paixão por RPA</span>
+                <span class="desc">, onde pude unir</span>
+                <span class="desc-sb">tecnologia e eficiência </span>para transformar processos.</span>
+            </p>
+
+            <a href="{% static 'docs/GabrielLima-Curriculo.pdf' %}" download class="button">
+                Download CV
+            </a>
+        </div>
+        <div class="tools">
+            <h1>
+                <span class="pre-title">./</span>
+                <span class="title-text">Ferramentas</span>
+            </h1>
+            {% for tool in tools %}
+            <span class="tools-tags">{{ tool.name }}</span>
+            {% endfor %}
+            <div style="margin-top: 20px;">
+                <a href="{% url 'tools' %}" class="button">Adicionar Ferramenta</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

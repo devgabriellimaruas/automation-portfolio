@@ -1,0 +1,30 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<div class="home-container">
+    <h1 class="title-home">
+        <span class="pre-title-home">Olá, eu sou o </span> Gabriel Lima
+    </h1>
+    <p class="description">Desenvolvedor Python especializado em automação de processos com foco em eficiência e
+        produtividade.</p>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/devgabriellimaruas/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/devgabriellimaruas" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="/contact"><i class="fas fa-envelope"></i></a>
+    </div>
+</div>
+<footer>
+    <p>
+        <span class="pre-names">Desenvolvido por</span>
+        <span class="names">Gabriel Lima</span>
+        <span class="pre-names">e Designer por</span>
+        <span class="names">Studio DesignbyGeo</span>
+    </p>
+</footer>
+{% endblock %}
