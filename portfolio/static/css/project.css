@@ -1,0 +1,322 @@
+.projects {
+    max-width: auto;
+    flex-direction: column;
+}
+
+.projects-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--color-text-primary);
+}
+
+.filter-projects {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.filter-projects span {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 0 6px;
+    background-color: var(--color-tertiary);
+    border-radius: var(--radius-min);
+    color: var(--color-text-quinary);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--color-text-secondary);
+    background-color: var(--color-text-quaternary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 366px);
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    justify-content: start;
+}
+
+.project-card {
+    background: var(--color-tertiary);
+    border-radius: var(--radius-base);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 366px;
+    text-decoration: none;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    /* aumenta 5% em todos os lados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* sombra mais forte */
+}
+
+.not-found {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 24px;
+    color: var(--color-text-secondary);
+}
+
+.project-image {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-primary);
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.card-content button {
+    background: var(--color-tertiary);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.card-content button:hover {
+    background: var(--color-primary);
+}
+
+.card-content .description {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    /* margin-bottom: 10px; */
+    margin: 8px 0 25px 0;
+    text-align: left;
+    font-weight: 400;
+}
+
+.card-content p {
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+.project-tools {
+    margin-top: 8px;
+    display: flex;
+    /* transforma em flex container */
+    flex-wrap: wrap;
+    /* permite quebrar linha se tiver muitos itens */
+    gap: 10px;
+    /* distância entre os itens */
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-color: var(--color-primary);
+    border-radius: var(--radius-base);
+    border: 1.8px solid var(--color-primary);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-primary);
+}
+
+.add-project-form {
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+    color: var(--color-text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--color-tertiary);
+    padding: 50px;
+    border-radius: var(--radius-base);
+    font-size: 20px;
+}
+
+.project-media {
+    display: flex;
+    /* coloca os itens lado a lado */
+    gap: 20px;
+    /* espaço entre os dois campos */
+    width: 100%;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.tools-checkboxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* permite quebra de linha */
+    gap: 10px;
+    justify-content: flex-start;
+    /* "left" não é válido, use flex-start */
+    margin-bottom: 50px;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-delete {
+    margin: 0;
+    padding: 0;
+}
+
+.button-delete {
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
+    border-radius: var(--radius-base);
+    width: 40px;
+    height: 30px;
+}
+
+.button-delete:hover {
+    background-color: var(--color-tertiary);
+}
+
+.projects-list {
+    list-style: none;
+    /* remove os bullets */
+    padding: 0;
+    margin-top: 30px;
+    max-width: 100%;
+    background-color: var(--color-tertiary);
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.projects-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    color: var(--color-text-primary);
+}
+
+.projects-list a {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+.button-group button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* VIEW PROJECTS STYLES */
+.view-video {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-base);
+}
+
+.view-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.view-tag {
+    display: inline-block;
+    padding: 14px 18px;
+    border-color: var(--color-primary);
+    border-radius: var(--radius-base);
+    border: 1.5px solid var(--color-primary);
+    font-size: 20Px;
+    font-weight: 400;
+    color: var(--color-text-primary);
+}
+
+.view-desc {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.view-buttons {
+    margin-bottom: 50px;
+}
+
+.button-back {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: var(--color-tertiary);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: var(--radius-base);
+    transition: background 0.3s;
+}
+
+.button-back:hover {
+    background-color: var(--color-text-primary);
+    color: var(--color-primary);
+    cursor: pointer;
+    font-weight: 500;
+}

@@ -4,26 +4,52 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Dev Gabriel Lima{% endblock %}</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS estático -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="https://kit.fontawesome.com/153f3b0de5.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/skills.css' %}">
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav>
         <a href="{% url 'home' %}">
             <img src="{% static 'images/foto_perfil.jpg' %}" alt="Foto de perfil" class="perfil">
         </a>
-        <a class="nav-link" href="{% url 'home' %}">Início</a>
-        <a class="nav-link" href="{% url 'about' %}">Sobre Mim</a>
-        <a class="nav-link" href="{% url 'habilities' %}">Habilidades</a>
-        <a class="nav-link" href="{% url 'projects' %}">Projetos</a>
-        <a class="nav-link" href="{% url 'contact' %}">Contato</a>
+        <a href="{% url 'home' %}" class="nav-link {% if request.path == '/' %}active{% endif %}">Início</a>
+
+        <a href="{% url 'about' %}" class="nav-link {% if '/about/' in request.path %}active{% endif %}">Sobre Mim</a>
+
+        <a href="{% url 'skills' %}"
+            class="nav-link {% if '/skills/' in request.path %}active{% endif %}">Habilidades</a>
+
+        <a href="{% url 'projects' %}"
+            class="nav-link {% if '/projects/' in request.path %}active{% endif %}">Projetos</a>
+
+        <a href="{% url 'contacts' %}"
+            class="nav-link {% if '/contacts/' in request.path %}active{% endif %}">Contato</a>
     </nav>
 
     {% block content %}{% endblock %}
+
+    <a href="/projects/create" class="nav-link"><i class="fa-solid fa-diagram-project"></i></a>
+
+    <a href="/about/read" class="nav-link"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+
+    {% block extra_scripts %}{% endblock %}
 </body>
+
 </html>

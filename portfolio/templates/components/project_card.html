@@ -1,0 +1,19 @@
+<a href="{% url 'view_project' project.id %}" class="project-card">
+    {% if project.thumbnail %}
+    <img class="project-image" src="{{ project.thumbnail.url }}" alt="{{ project.name }}">
+    {% else %}
+    <p>Thumbnail não disponível</p>
+    {% endif %}
+
+    <div class="card-content">
+        <div class="project-name">
+            <span>{{ project.name }}</span>
+        </div>
+        <p class="description">{{ project.description|truncatechars:110 }}</p>
+        <div class="project-tools">
+            {% for tag in project.tools_list|slice:":6" %}
+            <span class="project-tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</a>

@@ -42,7 +42,7 @@ body {
 
 body {
     background-color: var(--color-secondary);
-    font-family: var(--font-family-base);
+    font-family: var(--font-family-base) !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -59,37 +59,54 @@ body {
     max-width: 1200px;
     /* largura máxima para desktop */
     justify-content: left;
-    margin-top: 40px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.title {
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 .pre-title {
-    color: var(--color-text-tertiary);
     font-weight: 700;
-    font-size: 38px;
     color: var(--color-primary);
 }
 
 .title-text {
-    color: var(--color-text-primary);
     font-weight: 500;
-    font-size: 38px;
+    color: var(--color-text-primary);
 }
+
+/* tamanhos */
+.title.large .pre-title,
+.title.large .title-text {
+    font-size: 38px;  /* tamanho máximo */
+}
+
+.title.small .pre-title,
+.title.small .title-text {
+    font-size: 24px;  /* tamanho menor */
+}
+
 
 .button,
 .button-back {
     display: inline-block;
     padding: 16px 32px;
-    margin-top: 20px;
-    color: var(--text-primary);
-    font-weight: 400;
     font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
     text-decoration: none;
     border-radius: var(--radius-base);
-    transition: background 0.3s, color 0.3s;
     cursor: pointer;
+    transition: background 0.3s, color 0.3s, font-weight 0.3s;
+    border: none;
+    margin-left: 0;
 }
 
-/* diferenças individuais */
 .button {
     background-color: var(--color-primary);
 }
@@ -99,18 +116,25 @@ body {
     margin-left: 20px;
 }
 
-/* hover comum para ambos */
 .button:hover,
 .button-back:hover {
     background-color: var(--color-text-primary);
     color: var(--color-primary);
-    font-weight: 500;
 }
 
 
 /* BASE STYLES */
-body.navbar {
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
+    background: transparent;
+    padding: 40px 0;    
+}
+
+.nav-link.active {
+    color: var(--color-primary);
 }
 
 .perfil {
@@ -124,525 +148,21 @@ body.navbar {
     color: var(--color-text-primary);
     font-size: var(--font-size-base);
     text-decoration: none;
-    margin: 0 10px;
 }
 
-nav .nav-link:hover {
+.nav-link:hover {
     color: var(--color-primary);
     transition: color 0.3s;
 }
 
-nav {
-    display: flex;
-    /* ativa flexbox */
-    justify-content: center;
-    /* centraliza horizontalmente */
-    align-items: center;
-    /* alinha verticalmente imagem e links */
-    gap: 40px;
-    /* espaço entre os links e a imagem */
-    background: transparent;
-    /* sem fundo */
-    padding: 40px 0;
-    /* um pouco de espaço vertical */
+/* Ícones dentro da tabela */
+td a i {
+    color: var(--color-primary); /* ou qualquer cor, ex: red */
+    font-size: 18px; /* opcional, para ajustar o tamanho */
+    transition: color 0.3s; /* efeito suave ao passar o mouse */
 }
 
-/* HOME STYLES */
-.home-container {
-    flex: 1;
-    /* ocupa todo o espaço restante */
-    display: flex;
-    flex-direction: column;
-    /* organiza os elementos em coluna */
-    align-items: center;
-    /* centraliza horizontalmente */
-    justify-content: center;
-    /* centraliza verticalmente */
-    text-align: center;
-}
-
-.title-home {
-    font-family: var(--font-family-base);
-    font-size: 52px;
-    font-weight: 600;
-    color: var(--color-text-primary);
-    margin: 0;
-}
-
-.pre-title-home {
-    font-family: var(--font-family-base);
-    font-size: 52px;
-    font-weight: 400;
-    color: var(--color-text-primary);
-    text-align: center;
-}
-
-.description {
-    font-family: var(--font-family-base);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--color-text-primary);
-    text-align: left;
-}
-
-.social-icons {
-    display: flex;
-    /* container em linha */
-    justify-content: center;
-    /* centraliza horizontalmente */
-    align-items: center;
-    /* centraliza verticalmente */
-    gap: 22px;
-    /* espaço entre os ícones */
-    margin-top: 20px;
-    margin-bottom: 90px;
-}
-
-.social-icons i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 22px;
-    font-size: 26px;
-    text-decoration: none;
-    color: var(--color-primary);
-}
-
-.social-icons a {
-    text-decoration: none;
-    /* remove underline do link */
-}
-
-.social-icons a:hover i {
-    color: var(--color-text-primary);
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-footer {
-    text-align: center;
-    /* centraliza o texto */
-    padding: 20px 0;
-    /* espaçamento vertical */
-    background: transparent;
-    /* sem fundo */
-}
-
-footer p {
-    margin: 0;
-    font-family: var(--font-family-base);
-    font-size: 16px;
-    color: var(--color-text-tertiary);
-    font-weight: 500;
-}
-
-footer .pre-names {
-    font-style: italic;
-    /* itálico */
-    color: var(--color-text-tertiary);
-    font-weight: 400;
-}
-
-/* ABOUT STYLES */
-.about-content {
-    display: flex;
-}
-
-.about,
-.tools {
-    max-width: auto;
-    color: var(--color-text-primary);
-    max-width: 500px;
-}
-
-.about {
-    margin-right: 75px;
-}
-
-.tools {
-    margin-left: 75px;
-}
-
-.desc {
-    font-size: 18px;
-    color: var(--color-text-primary);
-    font-weight: 400;
-}
-
-.desc-sb {
-    font-size: 18px;
-    color: var(--color-text-primary);
-    font-weight: 600;
-}
-
-.tools-tags {
-    display: inline-block;
-    font-size: 16px;
-    padding: 6px 22px;
-    margin: 0px 20px 18px 0px;
-    border-radius: var(--radius-base);
-    font-weight: 400;
-    border: 1.5px solid var(--color-primary);
-}
-
-
-/* HABILITIES STYLES */
-.habilities {
-    max-width: auto;
-    flex-direction: column;
-}
-
-.cards-container {
-    display: flex;
-    gap: 20px;
-}
-
-.card {
-    border-radius: var(--radius-base);
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-}
-
-.card-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: var(--color-text-primary);
-}
-
-/* PROJECTS STYLES */
-.projects {
-    max-width: auto;
-    flex-direction: column;
-}
-
-.projects-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    color: var(--color-text-primary);
-}
-
-.filter-projects span {
-    font-size: 14px;
-    color: var(--color-text-secondary);
-    font-weight: 400;
-}
-
-.btn-toggle_project {
-    display: inline-block;
-    padding: 4px 12px;
-    margin: 0 6px;
-    background-color: var(--color-tertiary);
-    border-radius: var(--radius-min);
-    color: var(--color-text-quinary);
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    text-align: center;
-    user-select: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-toggle_project:hover,
-.btn-toggle_project.active {
-    color: var(--color-text-secondary);
-    background-color: var(--color-text-quaternary);
-}
-
-.projects-grid {
-    /* transform: scale(0.7);
-    transform-origin: top left; */
-    display: grid;
-    grid-template-columns: repeat(3, 366px);
-    /* 3 colunas fixas */
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    justify-content: start;
-}
-
-.project-card {
-    background: var(--color-tertiary);
-    border-radius: var(--radius-base);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    max-width: 366px;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-    /* aumenta 5% em todos os lados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* sombra mais forte */
-}
-
-.not-found {
-    width: 100%;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 24px;
-    color: var(--color-text-secondary);
-}
-
-.project-image {
-    max-width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
-    text-align: left;
-}
-
-.project-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-content h3 {
-    color: var(--color-text-primary);
-    font-size: 18px;
-    margin: 0;
-    font-weight: 500;
-}
-
-.card-content button {
-    background: var(--color-tertiary);
-    border-radius: 50%;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-}
-
-.card-content button:hover {
-    background: var(--color-primary);
-}
-
-.card-content .description {
-    font-size: 14px;
-    color: var(--color-text-secondary);
-    /* margin-bottom: 10px; */
-    margin: 8px 0 25px 0;
-    text-align: left;
-    font-weight: 400;
-}
-
-.card-content p {
-    font-size: 13px;
-    margin: 4px 0;
-}
-
-.project-tags {
-    margin-top: 8px;
-}
-
-.project-tag {
-    display: inline-block;
-    padding: 4px 12px;
-    border-color: var(--color-primary);
-    border-radius: var(--radius-base);
-    border: 1.5px solid var(--color-primary);
-    font-size: 12px;
-    font-weight: 400;
-    margin-right: 10px;
-    color: var(--color-text-primary);
-}
-
-/* CONTACT STYLES */
-
-
-/* ADICIONAR PROJETO */
-.add-project-form {
-    max-width: 100%;
-    margin: 0;
-    color: var(--color-text-primary);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* alinha à esquerda */
-    background-color: var(--color-tertiary);
-    padding: 50px;
-    border-radius: var(--radius-base);
-    font-size: 20px;
-}
-
-.form-label {
-    margin-bottom: 5px;
-    /* espaço entre label e input */
-    font-weight: 500;
-    color: var(--color-text-primary);
-}
-
-input[type="text"],
-textarea,
-select {
-    margin: 0 0 2px 0;
-    /* remove margens padrão, só mantém margem inferior se quiser */
-    padding: 10px 15px;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.tags-checkboxes {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: left;
-    margin-bottom: 50px;
-}
-
-.tools-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.tool-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.form-delete {
-    margin: 0;
-    padding: 0;
-}
-
-.button-delete {
-    background-color: var(--color-primary);
-    border: none;
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    font-size: 16px;
-    transition: color 0.3s;
-    border-radius: var(--radius-base);
-    width: 40px;
-    height: 30px;
-}
-
-.button-delete:hover {
-    background-color: var(--color-tertiary);
-}
-
-.tools-list {
-    list-style: none;
-    /* remove os bullets */
-    padding: 0;
-    margin-top: 30px;
-    max-width: 100%;
-    background-color: var(--color-tertiary);
-    border-radius: 8px;
-    padding: 10px 15px;
-}
-
-.tools-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    font-size: 16px;
-    transition: background-color 0.2s ease;
-    color: var(--color-text-primary);
-}
-
-.tools-list a {
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-.button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-
-
-
-.tool-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 10px;
-    border-radius: 6px;
-    margin-bottom: 5px;
-}
-
-.button-group button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-
-/* VIEW PROJECTS STYLES */
-.view-video {
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: var(--radius-base);
-}
-
-.view-tags {
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-.view-tag {
-    display: inline-block;
-    padding: 12px 18px;
-    border-color: var(--color-primary);
-    border-radius: var(--radius-base);
-    border: 1.5px solid var(--color-primary);
-    font-size: 20px;
-    font-weight: 400;
-    margin-right: 16px;
-    color: var(--color-text-primary);
-}
-
-.button-back {
-    display: inline-block;
-    /* faz o link se comportar como botão */
-    padding: 16px 32px;
-    /* espaço interno */
-    margin-top: 20px;
-    margin-left: 20px;
-    background-color: var(--color-tertiary);
-    /* cor do botão */
-    color: var(--text-primary);
-    /* cor do texto */
-    font-weight: 400;
-    /* regular */
-    font-size: 18px;
-    text-decoration: none;
-    /* remove underline */
-    border-radius: var(--radius-base);
-    /* cantos arredondados */
-    transition: background 0.3s;
-}
-
-.button-back:hover {
-    background-color: var(--color-text-primary);
-    /* muda cor ao passar o mouse */
-    color: var(--color-primary);
-    /* muda cor do texto */
-    cursor: pointer;
-    font-weight: 500;
+/* Cor diferente ao passar o mouse */
+td a:hover i {
+    color: var(--color-text-primary); /* cor de hover */
 }

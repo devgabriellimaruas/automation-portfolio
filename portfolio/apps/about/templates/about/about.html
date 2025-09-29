@@ -1,0 +1,33 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="about-content">
+        <div class="about">
+            {% include "components/title.html" with title="Sobre Mim" %}
+
+            <p><span class="desc">Olá, eu sou Gabriel Lima, desenvolvedor de automações apaixonado por transformar
+                    desafios em soluções. Desde o início da minha carreira, busco unir lógica, tecnologia e criatividade
+                    para gerar resultados que realmente fazem a diferença.</span><br><br>
+
+                <span class="desc">Tenho experiência em projetos de automação de processos diversos, utilizando
+                    ferramentas como Python para transformar tarefas manuais em soluções ágeis e eficientes. Meu foco é
+                    entregar automações que economizem tempo, reduzam erros e se adaptem às necessidades específicas de
+                    cada negócio.</span>
+            </p>
+
+            <a href="{% static 'docs/GabrielLima-Curriculo.pdf' %}" download class="button">
+                Download CV
+            </a>
+        </div>
+        <div class="tools">
+            {% include "components/title.html" with title="Ferramentas" %}
+
+            {% for tool in tools %}
+            <span class="tools-tags">{{ tool.name }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

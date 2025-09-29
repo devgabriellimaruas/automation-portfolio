@@ -1,0 +1,102 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+  {% include "components/title.html" with title="Adicionar projeto" %}
+
+  <form id="project-form" class="add-project-form" action="{% url 'create_project' %}" method="POST"
+    enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="project-media">
+      <div class="media-item">
+        <label class="form-label" for="name">Nome do Projeto:</label>
+        <input type="text" id="name" name="name" value="Meu Projeto Padrão" required><br><br>
+      </div>
+
+      <div class="media-item">
+        <label class="form-label" for="link_project">Link do Projeto:</label>
+        <input type="text" id="link_project" name="link_project"><br><br>
+      </div>
+    </div><br><br>
+
+    <label class="form-label" for="description">Descrição:</label>
+    <textarea id="description" name="description" rows="4" cols="50" required>Desenvolvimento de CRUD para banco de dados e integração de automações com scheduler.
+    </textarea><br><br>
+
+
+    <label class="form-label" for="type">Tipo:</label>
+    <select id="type" name="type" required>
+      <option value="">Selecione o tipo</option>
+      <option value="Destaques" selected>Destaques</option>
+      <option value="RPA">RPA</option>
+      <option value="Dados">Dados</option>
+      <option value="Sistemas">Sistemas</option>
+    </select><br><br>
+
+    <div class="project-media">
+      <div class="media-item">
+        <label class="form-label" for="thumbnail">Thumbnail do Projeto:</label>
+        <input type="file" id="thumbnail" name="thumbnail" required>
+      </div>
+
+      <div class="media-item">
+        <label class="form-label" for="video">Video do Projeto:</label>
+        <input type="file" id="video" name="video">
+      </div>
+    </div><br><br>
+
+    <label class="form-label">Ferramentas:</label>
+    <div class="tools-checkboxes">
+      {% for tool in tools %}
+      <label>
+        <input type="checkbox" name="tool" value="{{ tool }}" class="tag-checkbox" checked>
+        {{ tool }}
+      </label>
+      {% endfor %}
+    </div><br>
+
+    <button type="submit" class="button">Adicionar Projeto</button>
+  </form>
+
+  <hr>
+
+  <ul class="projects-list">
+
+    {% for project in projects %}
+    <li>
+      <div class="project-item">
+        <p>{{ project.name }}</p>
+        <p>{{ project.description }}</p>
+        <p>{{ project.type }}</p>
+        <p>{{ project.tools }}</p>
+
+        <form action="{% url 'update_project' project.id %}" method="GET" style="display:inline; margin-left:10px;">
+          <a href="{% url 'update_project' project.id %}" class="button">✏️ Editar</a>
+        </form>
+
+        <form id="delete-project-{{ project.id }}" action="{% url 'delete_project' project.id %}" method="POST"
+          style="display:inline; margin-left:10px;">
+          {% csrf_token %}
+          <a href="#" class="button"
+            onclick="if(confirm('Tem certeza que deseja excluir esta ferramenta?')) { document.getElementById('delete-project-{{ project.id }}').submit(); } return false;">
+            🗑️ Excluir
+          </a>
+        </form>
+      </div>
+    </li>
+    {% empty %}
+    <tr class="not-found">
+      😎 Nenhum projeto por aqui ainda<br>
+      Mas calma, boas coisas estão a caminho!
+    </tr>
+    {% endfor %}
+  </ul>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/create_projects.js' %}"></script>
+{% endblock %}

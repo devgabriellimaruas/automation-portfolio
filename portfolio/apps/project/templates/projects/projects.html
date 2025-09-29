@@ -1,0 +1,43 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="projects">
+    <div class="projects-header">
+      {% include "components/title.html" with title="Projetos" %}
+
+      <div class="filter-projects">
+        <span>Exibir:</span>
+        {% for filter in filters_list %}
+        <label class="filter-btn {% if filter_type == filter %}active{% endif %}" data-type="{{ filter }}">
+          {% if filter == "Destaques" %}
+          <i class="fa-solid fa-star"></i>
+          {% endif %}
+          {{ filter }}
+        </label>
+        {% endfor %}
+      </div>
+
+    </div>
+
+    {% if projects %}
+    <div class="projects-grid">
+      {% for project in projects %}
+      {% include "components/project_card.html" with project=project %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="not-found">
+      😎 Nenhum projeto por aqui ainda<br>
+      Mas calma, boas coisas estão a caminho!
+    </p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/projects.js' %}"></script>
+{% endblock %}

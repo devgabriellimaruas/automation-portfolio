@@ -1,0 +1,43 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="skills">
+        {% include "components/title.html" with title="Habilidades" %}
+
+        <div class="cards-container">
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    robot_2
+                </span>
+                <p class="card-title">Automação RPA</p>
+                <span class="desc">Automação de tarefas repetitivas realizadas por pessoas em sistemas, transformando o
+                    processo em atividades automáticas, economizando tempo, reduzindo erros e permitindo que as pessoas
+                    foquem em tarefas mais estratégicas.</span>
+            </div>
+
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    analytics
+                </span>
+                <p class="card-title">Automação de Dados</p>
+                <span class="desc">Automação de coleta, transformação e carregamento de dados (ETL), fornecendo
+                    informações precisas e atualizadas para decisões mais rápidas e inteligentes.</span>
+            </div>
+
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    sync_alt
+                </span>
+                <p class="card-title">Automação de Sistemas</p>
+                <span class="desc">Automação que conecta diferentes softwares e aplicativos usando ferramentas como
+                    <b>Power Automate e UiPath</b>, criando fluxos automáticos, agilizando processos e garantindo que as
+                    tarefas ocorram de forma consistente e eficiente.</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

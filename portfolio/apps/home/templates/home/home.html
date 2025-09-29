@@ -1,0 +1,34 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="home-container">
+    <h1 class="title-home">
+        <span class="pre-title-home">Olá, eu sou o </span>
+        <span class="name-home">Gabriel Lima</span>
+    </h1>
+    <p class="description">
+        <span class="highlight">Desenvolvedor de automações</span> focado em transformar
+        <span class="highlight">tarefas manuais</span> e repetitivas em
+        <span class="highlight">soluções eficientes</span>,<br>
+        que aumentam a <span class="highlight">produtividade</span>, economizam
+        <span class="highlight">tempo</span> e melhoram a
+        <span class="highlight">performance</span> das operações.
+    </p>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/devgabriellimaruas/" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/devgabriellimaruas" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="/contacts" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </div>
+
+</div>
+{% include "components/footer.html" %}
+
+{% endblock %}

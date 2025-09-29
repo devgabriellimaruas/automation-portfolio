@@ -25,8 +25,8 @@ app
 │       └── base.html
 │   └── about.html
 │   └── add_project.html
-│   └── contact.html
-│   └── habilities.html
+│   └── contacts.html
+│   └── skills.html
 │   └── home.html
 │   └── projects.html
 ├── app.py

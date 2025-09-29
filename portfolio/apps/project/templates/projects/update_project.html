@@ -1,0 +1,58 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+  {% include "components/title.html" with title="Editar projetos" %}
+
+  <form id="project-form" class="add-project-form" action="{% url 'update_project' project.id %}" method="POST">
+    {% csrf_token %}
+
+    <div class="project-media">
+      <div class="media-item">
+        <label class="form-label" for="name">Nome do Projeto:</label>
+        <input type="text" id="name" name="name" value="{{ project.name|default:'' }}" required>
+      </div>
+
+      <div class="media-item">
+        <label class="form-label" for="link_project">Link do Projeto:</label>
+        <input type="text" id="link_project" name="link_project" value="{{ project.link_project|default:'' }}">
+      </div>
+    </div>
+
+    <label class="form-label" for="description">Descrição:</label>
+    <textarea id="description" name="description" rows="4" cols="50" required>Desenvolvimento de CRUD para banco de dados e integração de automações com scheduler.
+    </textarea><br><br>
+
+    <label class="form-label" for="type">Tipo:</label>
+    <select id="type" name="type" required>
+      <option value="">Selecione o tipo</option>
+      <option value="Destaques" {% if project.type == "Destaques" %}selected{% endif %}>Destaques</option>
+      <option value="RPA" {% if project.type == "RPA" %}selected{% endif %}>RPA</option>
+      <option value="Dados" {% if project.type == "Dados" %}selected{% endif %}>Dados</option>
+      <option value="Sistemas" {% if project.type == "Sistemas" %}selected{% endif %}>Sistemas</option>
+    </select><br><br>
+
+
+    <label class="form-label">Ferramentas:</label>
+    <div class="tools-checkboxes">
+      {% for tool in tools %}
+      <label>
+          <input type="checkbox" name="tools" value="{{ tool.name }}" {% if tool.name in selected_tools %}checked{% endif %}>
+          {{ tool.name }}
+      </label>
+      {% endfor %}
+  </div>
+
+
+
+    <button type="submit" class="button">Editar Projeto</button>
+  </form>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{% static 'js/update_project.js' %}"></script>
+{% endblock %}
