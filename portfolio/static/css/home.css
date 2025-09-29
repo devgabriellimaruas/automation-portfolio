@@ -8,10 +8,9 @@
 }
 
 .title-home {
-    font-family: var(--font-family-base);
     font-size: 52px;
     font-weight: 600;
-    color: var(--color-text-primary) !important;
+    color: var(--color-text) !important;
     margin: 0;
     text-align: center;
     line-height: 1.2;
@@ -26,13 +25,13 @@
 }
 
 .description {
-    font-family: var(--font-family-base);
     font-size: 18px;
     font-weight: 400;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     text-align: center;
     margin: 20px;
 }
+
 .highlight {
     font-weight: 600;
 }
@@ -56,17 +55,16 @@
 }
 
 .social-icons a:hover {
-    color: var(--color-text-primary);
+    color: var(--color-text);
     cursor: pointer;
 }
 
 .site-footer {
     text-align: center;
-    padding: 30px; 
+    padding: 30px;
     background: transparent;
-    font-family: var(--font-family-base);
     font-size: 14px;
-    color: var(--color-text-tertiary);
+    color: var(--color-text-alt);
 }
 
 .footer-text {

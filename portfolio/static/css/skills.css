@@ -11,7 +11,7 @@
 }
 
 .card {
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     max-width: 330px;
 }
 
@@ -19,7 +19,7 @@
     margin: 20px 0 10px;
     font-size: 24px;
     font-weight: 600;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .material-symbols-outlined {

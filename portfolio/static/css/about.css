@@ -5,7 +5,7 @@
 .about,
 .tools {
     max-width: auto;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     max-width: 500px;
 }
 
@@ -19,13 +19,13 @@
 
 .desc {
     font-size: 18px;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     font-weight: 400;
 }
 
 .desc-sb {
     font-size: 18px;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     font-weight: 600;
 }
 
@@ -34,12 +34,12 @@
     font-size: 16px;
     padding: 6px 22px;
     margin: 0px 20px 18px 0px;
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     font-weight: 400;
     border: 1.5px solid var(--color-primary);
 }
 
-.about a{
+.about a {
     margin-top: 30px;
 }
 
@@ -58,11 +58,10 @@
 
 .tools-list {
     list-style: none;
-    /* remove os bullets */
     padding: 0;
     margin-top: 30px;
     max-width: 100%;
-    background-color: var(--color-tertiary);
+    background-color: var(--color-bg-alt);
     border-radius: 8px;
     padding: 10px 15px;
 }
@@ -74,7 +73,7 @@
     padding: 10px 15px;
     font-size: 16px;
     transition: background-color 0.2s ease;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .tools-list a {

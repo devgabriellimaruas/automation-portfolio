@@ -1,29 +1,26 @@
-:root {
-    /* Palette */
-    --color-primary: #54199B;
-    --color-secondary: #1A131F;
-    --color-tertiary: rgba(245, 245, 245, 0.1);
-    /* #F5F5F5 10% */
-    --color-text-primary: #F5F5F5;
-    --color-text-secondary: #D3D3D3;
-    --color-text-tertiary: rgba(245, 245, 245, 0.8);
-    /* #F5F5F5 80% */
-    --color-text-quaternary: rgba(245, 245, 245, 0.3);
-    /* #F5F5F5 30% */
-    --color-text-quinary: rgba(211, 211, 211, 0.7);
-    ;
-    /* #D3D3D3 70% */
+:root[data-theme="dark"] {
+    --color-primary: #5A199B;
+    --color-bg: #1A131F;
+    --color-bg-alt: rgba(245, 245, 245, 0.1); /* #F5F5F5 10% */
+    --color-bg-ft: rgba(245, 245, 245, 0.3); /* #F5F5F5 30% */
+    
+    --color-text: #F5F5F5;
+    --color-text-pr: #F5F5F5;
+    --color-text-bt: #F5F5F5;
+    --color-text-alt: #D3D3D3;
+    --color-text-ft: rgba(211, 211, 211, 0.7); /* #D3D3D3 70% */
+}
+:root[data-theme="light"] {
+    --color-primary: #7836BA;
+    --color-bg: #F2F2F2;
+    --color-bg-alt: #FCFCFC;
+    --color-bg-ft: #D4D4D4;
 
-    /* Typography */
-    --font-family-base: 'Poppins', sans-serif;
-    --font-size-base: 16px;
-
-    /* Spacing */
-    --spacing-base: 16px;
-
-    /* Borders */
-    --radius-base: 8px;
-    --radius-min: 4px;
+    --color-text: #1A131F;
+    --color-text-pr: #7836BA;
+    --color-text-bt: #F5F5F5;
+    --color-text-alt: #737373;
+    --color-text-ft: #E6E6E6;
 }
 
 /* font-weight: 400; Regular */
@@ -41,23 +38,21 @@ body {
 }
 
 body {
-    background-color: var(--color-secondary);
-    font-family: var(--font-family-base) !important;
+    background-color: var(--color-bg);
+    font-family: 'Poppins', sans-serif !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-size: 18px;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .container {
     flex-direction: row;
     flex: 1;
     margin: 0 auto;
-    /* centraliza horizontalmente */
     width: 100%;
     max-width: 1200px;
-    /* largura máxima para desktop */
     justify-content: left;
 }
 
@@ -77,18 +72,18 @@ h1 {
 
 .title-text {
     font-weight: 500;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 /* tamanhos */
 .title.large .pre-title,
 .title.large .title-text {
-    font-size: 38px;  /* tamanho máximo */
+    font-size: 38px;
 }
 
 .title.small .pre-title,
 .title.small .title-text {
-    font-size: 24px;  /* tamanho menor */
+    font-size: 24px;
 }
 
 
@@ -98,9 +93,9 @@ h1 {
     padding: 16px 32px;
     font-size: 18px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--color-text-bt);
     text-decoration: none;
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s, font-weight 0.3s;
     border: none;
@@ -112,13 +107,13 @@ h1 {
 }
 
 .button-back {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-bg-alt);
     margin-left: 20px;
 }
 
 .button:hover,
 .button-back:hover {
-    background-color: var(--color-text-primary);
+    background-color: var(--color-text);
     color: var(--color-primary);
 }
 
@@ -130,7 +125,7 @@ nav {
     align-items: center;
     gap: 40px;
     background: transparent;
-    padding: 40px 0;    
+    padding: 40px 0;
 }
 
 .nav-link.active {
@@ -145,8 +140,8 @@ nav {
 }
 
 .nav-link {
-    color: var(--color-text-primary);
-    font-size: var(--font-size-base);
+    color: var(--color-text);
+    font-size: 16px;
     text-decoration: none;
 }
 
@@ -155,14 +150,12 @@ nav {
     transition: color 0.3s;
 }
 
-/* Ícones dentro da tabela */
 td a i {
-    color: var(--color-primary); /* ou qualquer cor, ex: red */
-    font-size: 18px; /* opcional, para ajustar o tamanho */
-    transition: color 0.3s; /* efeito suave ao passar o mouse */
+    color: var(--color-primary);
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
-/* Cor diferente ao passar o mouse */
 td a:hover i {
-    color: var(--color-text-primary); /* cor de hover */
+    color: var(--color-text);
 }

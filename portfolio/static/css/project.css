@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .filter-projects {
@@ -19,7 +19,7 @@
 
 .filter-projects span {
     font-size: 14px;
-    color: var(--color-text-secondary);
+    color: var(--color-text-alt);
     font-weight: 400;
 }
 
@@ -27,9 +27,9 @@
     display: inline-block;
     padding: 4px 12px;
     margin: 0 6px;
-    background-color: var(--color-tertiary);
-    border-radius: var(--radius-min);
-    color: var(--color-text-quinary);
+    background-color: var(--color-bg-alt);
+    border-radius: 4px;
+    color: var(--color-text-ft);
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
@@ -40,8 +40,8 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-    color: var(--color-text-secondary);
-    background-color: var(--color-text-quaternary);
+    color: var(--color-text-alt);
+    background-color: var(--color-bg-ft);
 }
 
 .projects-grid {
@@ -55,8 +55,8 @@
 }
 
 .project-card {
-    background: var(--color-tertiary);
-    border-radius: var(--radius-base);
+    background: var(--color-bg-alt);
+    border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -66,9 +66,7 @@
 
 .project-card:hover {
     transform: scale(1.05);
-    /* aumenta 5% em todos os lados */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    /* sombra mais forte */
 }
 
 .not-found {
@@ -76,7 +74,7 @@
     text-align: center;
     margin-top: 50px;
     font-size: 24px;
-    color: var(--color-text-secondary);
+    color: var(--color-text-alt);
 }
 
 .project-image {
@@ -95,14 +93,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     font-size: 18px;
     margin: 0;
     font-weight: 500;
 }
 
 .card-content button {
-    background: var(--color-tertiary);
+    background: var(--color-bg-alt);
     border-radius: 50%;
     cursor: pointer;
     width: 25px;
@@ -119,8 +117,7 @@
 
 .card-content .description {
     font-size: 14px;
-    color: var(--color-text-secondary);
-    /* margin-bottom: 10px; */
+    color: var(--color-text-alt);
     margin: 8px 0 25px 0;
     text-align: left;
     font-weight: 400;
@@ -134,60 +131,53 @@
 .project-tools {
     margin-top: 8px;
     display: flex;
-    /* transforma em flex container */
     flex-wrap: wrap;
-    /* permite quebrar linha se tiver muitos itens */
     gap: 10px;
-    /* distância entre os itens */
 }
 
 .project-tag {
     display: inline-block;
     padding: 4px 12px;
     border-color: var(--color-primary);
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     border: 1.8px solid var(--color-primary);
     font-size: 12px;
     font-weight: 400;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .add-project-form {
     max-width: 100%;
     margin: 0;
     margin-bottom: 40px;
-    color: var(--color-text-primary);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-tertiary);
+    background-color: var(--color-bg-alt);
     padding: 50px;
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     font-size: 20px;
 }
 
 .project-media {
     display: flex;
-    /* coloca os itens lado a lado */
     gap: 20px;
-    /* espaço entre os dois campos */
     width: 100%;
 }
 
 .form-label {
     margin-bottom: 5px;
     font-weight: 500;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .tools-checkboxes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* permite quebra de linha */
     gap: 10px;
     justify-content: flex-start;
-    /* "left" não é válido, use flex-start */
     margin-bottom: 50px;
 }
 
@@ -212,26 +202,25 @@
 .button-delete {
     background-color: var(--color-primary);
     border: none;
-    color: var(--color-text-secondary);
+    color: var(--color-text-alt);
     cursor: pointer;
     font-size: 16px;
     transition: color 0.3s;
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     width: 40px;
     height: 30px;
 }
 
 .button-delete:hover {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-bg-alt);
 }
 
 .projects-list {
     list-style: none;
-    /* remove os bullets */
     padding: 0;
     margin-top: 30px;
     max-width: 100%;
-    background-color: var(--color-tertiary);
+    background-color: var(--color-bg-alt);
     border-radius: 8px;
     padding: 10px 15px;
 }
@@ -243,7 +232,7 @@
     padding: 10px 15px;
     font-size: 16px;
     transition: background-color 0.2s ease;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .projects-list a {
@@ -271,7 +260,7 @@
 .view-video {
     max-width: 100%;
     object-fit: cover;
-    border-radius: var(--radius-base);
+    border-radius: 8px;
 }
 
 .view-tools {
@@ -286,11 +275,11 @@
     display: inline-block;
     padding: 14px 18px;
     border-color: var(--color-primary);
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     border: 1.5px solid var(--color-primary);
     font-size: 20Px;
     font-weight: 400;
-    color: var(--color-text-primary);
+    color: var(--color-text);
 }
 
 .view-desc {
@@ -305,17 +294,17 @@
 .button-back {
     display: inline-block;
     padding: 16px 32px;
-    background-color: var(--color-tertiary);
+    background-color: var(--color-bg-alt);
     color: var(--text-primary);
     font-weight: 500;
     font-size: 18px;
     text-decoration: none;
-    border-radius: var(--radius-base);
+    border-radius: 8px;
     transition: background 0.3s;
 }
 
 .button-back:hover {
-    background-color: var(--color-text-primary);
+    background-color: var(--color-text);
     color: var(--color-primary);
     cursor: pointer;
     font-weight: 500;
