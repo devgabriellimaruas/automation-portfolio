@@ -1,20 +1,21 @@
 {% extends "components/base.html" %}
 {% load static %}
 
-{% block content %}
+{% block body_class %}projects{% endblock %}
 
+{% block content %}
 <div class="container">
     <div class="projects">
-        {% include "components/title.html" with title=project.name %}
+        {% include "components/title.html" with title=current_project.name %}
 
         <div>
-            {% if project.video %}
+            {% if current_project.video %}
             <video class="view-video" id="video" width="100%" height="700" controls>
-                <source src="{{ project.video.url }}" type="video/mp4">
+                <source src="{{ current_project.video.url }}" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
             {% else %}
-            <img class="view-video" id="thumbnail" src="{{ project.thumbnail.url }}" alt="{{ project.name }}">
+            <img class="view-video" id="thumbnail" src="{{ current_project.thumbnail.url }}" alt="{{ current_project.name }}">
             {% endif %}
         </div>
 
@@ -24,10 +25,10 @@
             {% endfor %}
         </div>
 
-        <p class="view-desc">{{ project.description }}</p>
+        <p class="view-desc">{{ current_project.description }}</p>
 
         <div class="view-buttons">
-            <a href={{project.link_project}} target="_blank" class="button">
+            <a href={{current_project.link_project}} target="_blank" class="button">
                 Ver projeto
             </a>
             <a type="button" onclick="history.back()" class="button-back">
@@ -64,7 +65,10 @@
             {% endfor %}
         </div>
         {% else %}
-        <p class="not-found">😎 Nenhum projeto por aqui ainda<br>Mas calma, boas coisas estão a caminho!</p>
+        <li class="not-found">
+            😎 Nenhum projeto por aqui ainda<br>
+            Mas calma, boas coisas estão a caminho!
+        </li>
         {% endif %}
     </div>
 </div>

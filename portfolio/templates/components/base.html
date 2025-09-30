@@ -24,7 +24,13 @@
     {% block extra_head %}{% endblock %}
 </head>
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
+    <div class="blur-background">
+        <div class="blur-ball ball1"></div>
+        <div class="blur-ball ball2"></div>
+        <div class="blur-ball ball3"></div>
+    </div>
+
     <nav>
         <a href="{% url 'home' %}">
             <img src="{% static 'images/foto_perfil.jpg' %}" alt="Foto de perfil" class="perfil">

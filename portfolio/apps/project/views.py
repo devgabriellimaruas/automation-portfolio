@@ -72,12 +72,12 @@ def delete_project(request, pk):
 
 
 def view_project(request, pk):
-    project = get_object_or_404(Project, pk=pk)
+    current_project = get_object_or_404(Project, pk=pk)
     tools_list = [tag.strip()
-                  for tag in project.tools.split(",")] if project.tools else []
-    projects = Project.objects.filter(type=project.type).exclude(pk=project.pk)
+                  for tag in current_project.tools.split(",")] if current_project.tools else []
+    projects = Project.objects.filter(type=current_project.type).exclude(pk=current_project.pk)
     return render(request, 'projects/view_project.html', {
-        'project': project,
+        'current_project': current_project,
         'projects': projects,
         'tools_list': tools_list
     })

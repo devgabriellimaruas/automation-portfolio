@@ -1,6 +1,8 @@
 {% extends "components/base.html" %}
 {% load static %}
 
+{% block body_class %}projects{% endblock %}
+
 {% block content %}
 <div class="container">
 
@@ -87,10 +89,10 @@
       </div>
     </li>
     {% empty %}
-    <tr class="not-found">
+    <li class="not-found">
       😎 Nenhum projeto por aqui ainda<br>
       Mas calma, boas coisas estão a caminho!
-    </tr>
+    </li>
     {% endfor %}
   </ul>
 
@@ -98,5 +100,6 @@
 {% endblock %}
 
 {% block extra_scripts %}
+{{ block.super }}
 <script src="{% static 'js/create_projects.js' %}"></script>
 {% endblock %}

@@ -2,14 +2,18 @@
     display: flex;
 }
 
-.about,
+.about-me,
 .tools {
     max-width: auto;
     color: var(--color-text);
     max-width: 500px;
 }
 
-.about {
+.highlight {
+    font-weight: 600;
+}
+
+.about-me {
     margin-right: 75px;
 }
 
@@ -39,7 +43,7 @@
     border: 1.5px solid var(--color-primary);
 }
 
-.about a {
+.about-me a {
     margin-top: 30px;
 }
 

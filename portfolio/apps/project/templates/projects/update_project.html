@@ -1,9 +1,10 @@
 {% extends "components/base.html" %}
 {% load static %}
 
+{% block body_class %}projects{% endblock %}
+
 {% block content %}
 <div class="container">
-
   {% include "components/title.html" with title="Editar projetos" %}
 
   <form id="project-form" class="add-project-form" action="{% url 'update_project' project.id %}" method="POST">
@@ -54,5 +55,6 @@
 {% endblock %}
 
 {% block extra_scripts %}
+{{ block.super }}
 <script src="{% static 'js/update_project.js' %}"></script>
 {% endblock %}

@@ -10,7 +10,7 @@
 .title-home {
     font-size: 52px;
     font-weight: 600;
-    color: var(--color-text) !important;
+    color: var(--color-text-pr) !important;
     margin: 0;
     text-align: center;
     line-height: 1.2;
@@ -55,7 +55,7 @@
 }
 
 .social-icons a:hover {
-    color: var(--color-text);
+    color: var(--color-bg-hvr);
     cursor: pointer;
 }
 
@@ -74,4 +74,5 @@
 
 .footer-name {
     font-weight: 600;
+    color: inherit;
 }
