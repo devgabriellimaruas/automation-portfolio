@@ -212,4 +212,10 @@ portfolio/static/docs/*
 portfolio/static/images/*
 !portfolio/static/images/*.md
 portfolio/static/uploads/*
-!portfolio/static/uploads/*.md
+!portfolio/staticfiles/uploads/*.md
+portfolio/staticfiles/docs/*
+!portfolio/staticfiles/docs/*.md
+portfolio/staticfiles/images/*
+!portfolio/staticfiles/images/*.md
+portfolio/staticfiles/uploads/*
+!portfolio/staticfiles/uploads/*.md
