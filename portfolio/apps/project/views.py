@@ -28,27 +28,33 @@ def projects(request):
     })
 
 
-def create_project(request):
+def read_projects(request):
     tools = Tools.objects.all().order_by('order')
     projects = Project.objects.all()
+    form = ProjectForm()
+    
+    return render(request, 'projects/create_projects.html', {
+        'form': form,
+        'tools': tools,
+        'projects': projects,
+    })
 
-    if request.method == "POST":
-        form = ProjectForm(request.POST, request.FILES)
 
-        if form.is_valid():
-            project = form.save(commit=False)
-            selected_tools = request.POST.getlist("tools")
-            tools_str = ", ".join(selected_tools)
-            project.tools = tools_str
-            project.save()
-            messages.success(request, "Projeto adicionado com sucesso!")
-            return redirect('projects')
-        else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, f"{field}: {error}")
+def create_project(request):
+    tools = Tools.objects.all().order_by('order')
+    form = ProjectForm(request.POST, request.FILES)
+    if form.is_valid():
+        project = form.save(commit=False)
+        selected_tools = request.POST.getlist("tools")
+        tools_str = ", ".join(selected_tools)
+        project.tools = tools_str
+        project.save()
+        messages.success(request, "Projeto adicionado com sucesso!")
+        return redirect('projects')
     else:
-        form = ProjectForm()
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(request, f"{field}: {error}")
 
     return render(request, 'projects/create_projects.html', {
         'form': form,
