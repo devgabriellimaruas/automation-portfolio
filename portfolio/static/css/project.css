@@ -133,7 +133,7 @@
     color: var(--color-text);
 }
 
-.add-project-form {
+.project-form {
     max-width: 100%;
     margin: 0;
     margin-bottom: 40px;

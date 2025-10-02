@@ -8,7 +8,7 @@
 
   {% include "components/title.html" with title="Adicionar projeto" %}
 
-  <form id="project-form" class="add-project-form" action="{% url 'create_project' %}" method="POST"
+  <form id="project-form" class="project-form" action="{% url 'create_project' %}" method="POST"
     enctype="multipart/form-data">
     {% csrf_token %}
     <div class="project-media">
@@ -53,7 +53,7 @@
     <div class="tools-checkboxes">
       {% for tool in tools %}
       <label>
-        <input type="checkbox" name="tool" value="{{ tool }}" class="tag-checkbox" checked>
+        <input type="checkbox" name="tools" value="{{ tool }}" class="tag-checkbox" checked>
         {{ tool }}
       </label>
       {% endfor %}
@@ -101,5 +101,6 @@
 
 {% block extra_scripts %}
 {{ block.super }}
-<script src="{% static 'js/create_projects.js' %}"></script>
+<script src="{% static 'js/create_project.js' %}"></script>
+<script src="{% static 'js/status_alert.js' %}"></script>
 {% endblock %}
