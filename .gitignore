@@ -209,3 +209,7 @@ __marimo__/
 # Personal
 portfolio/static/uploads/*
 portfolio/static/uploads/*.md
+portfolio/media/videos/*
+!portfolio/media/videos/*.md
+portfolio/media/thumbnails/*
+!portfolio/media/thumbnails/*.md
