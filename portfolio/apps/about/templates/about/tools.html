@@ -8,13 +8,11 @@
 
   <form id="tool-form" class="add-project-form" action="{% url 'create_tool' %}" method="POST">
     {% csrf_token %}
-    <input type="text" name="name" placeholder="Nova ferramenta" required>
+    <input type="text" name="name" placeholder="Nova ferramenta" required><br><br>
     <a href="#" class="button" onclick="document.getElementById('tool-form').submit(); return false;">
       Adicionar Ferramenta
     </a>
-  </form>
-
-  <hr>
+  </form><br>
 
   <ul class="tools-list">
     {% for tool in tools %}

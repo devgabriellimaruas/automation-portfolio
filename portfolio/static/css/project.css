@@ -168,11 +168,17 @@
     margin-bottom: 50px;
 }
 
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+.projects-list table {
+  width: 100%;              /* Tabela ocupa toda a largura */
+  border-collapse: collapse; /* Remove espaçamento entre células */
+  table-layout: fixed;       /* Colunas têm largura uniforme */
+}
+
+.projects-list table th,
+.projects-list table td {
+  border: 1px solid var(--color-text); 
+  padding: 8px;
+  text-align: left;
 }
 
 .project-item {
@@ -209,17 +215,9 @@
     max-width: 100%;
     background-color: var(--color-bg-alt);
     border-radius: 8px;
-    padding: 10px 15px;
-}
-
-.projects-list li {
+    padding: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    font-size: 16px;
-    transition: background-color 0.2s ease;
-    color: var(--color-text);
+    flex-direction: column;
 }
 
 .projects-list a {
