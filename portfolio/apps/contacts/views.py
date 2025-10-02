@@ -12,18 +12,34 @@ def contacts_form(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+            
+            html_template = f"""
+            <!DOCTYPE html>
+            <html lang="pt-BR">
+            <body>
+              <h3>Mensagem de {name} via {email}</h3>
+              <hr>
+              <p><strong>Mensagem:</strong></p>
+              <p>{message}</p>
+            </body>
+            </html>
+            """
+            
             try:
                 send_mail(
-                    f"{name} - {email}",
-                    message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [settings.DEFAULT_FROM_EMAIL],
+                    subject="Mensagem enviada do Portfólio de Gabriel Lima",
+                    message=f"{name} - {email} - {message}",
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.DEFAULT_FROM_EMAIL],
+                    html_message=html_template
                 )
                 messages.success(request, "Obrigado pelo seu contato! Responderemos o mais breve possível.")
             except:
                 messages.error(request, "Ops! Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.")
+            
             return redirect('contacts')
         else:
             messages.error(request, "Ops! Há erros no formulário. Por favor, verifique e tente novamente.")
     
     return render(request, 'contacts/contacts.html', {'form': form})
+
