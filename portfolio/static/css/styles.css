@@ -72,7 +72,7 @@ h1 {
 }
 
 .title {
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
@@ -120,8 +120,14 @@ h1 {
     margin-left: 20px;
 }
 
-.button:hover,
-.button-back:hover {
+.button:disabled,
+.button-back:disabled {
+    cursor: default; /* força o cursor padrão */
+    opacity: 0.6;    /* opcional, deixa visualmente desativado */
+}
+
+.button:not(:disabled):hover,
+.button-back:not(:disabled):hover {
     background-color: var(--color-bg-hvr);
     color: var(--color-primary);
 }

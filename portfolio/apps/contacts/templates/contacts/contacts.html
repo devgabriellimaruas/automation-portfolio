@@ -7,6 +7,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <div class="container">
+
+    {% if messages %}
+    <div id="message-popup">
+        {% for message in messages %}
+        <div class="popup {{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="header">
         {% include "components/title.html" with title="Contato" %}
     </div>
@@ -37,4 +48,5 @@
 {% block extra_scripts %}
 {{ block.super }}
 <script src="{% static 'js/send_email.js' %}"></script>
+<script src="{% static 'js/notify_contact.js' %}"></script>
 {% endblock %}

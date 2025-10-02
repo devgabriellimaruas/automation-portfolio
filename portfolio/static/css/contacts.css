@@ -97,3 +97,24 @@ textarea:focus {
     display: flex;
     margin-left: auto;
 }
+
+#message-popup {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#message-popup .popup {
+    background-color: var(--color-bg-alt);
+    color: var(--color-text);
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+    font-size: 14px;
+}
+
+#message-popup .popup.success { background-color: #218838; }
+#message-popup .popup.error { background-color: #c82333; }
