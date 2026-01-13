@@ -1,0 +1,36 @@
+:root[data-theme="dark"] {
+    --color-primary: #5A199B;
+    --blur-ball-color: rgba(90, 25, 155, 0.3);
+    --color-bg: #1A131F;
+    --color-bg-alt: rgba(245, 245, 245, 0.1); /* #F5F5F5 10% */
+    --color-bg-ipt: #453F4B;
+    --color-bg-hvr: #F5F5F5;
+    
+    --color-text: #F5F5F5;
+    --color-text-pr: #F5F5F5;
+    --color-text-bt: #F5F5F5;
+    --color-text-alt: #D3D3D3;
+
+    --color-tx-ft-act: #D3D3D3;
+    --color-tx-ft-inact: rgba(211, 211, 211, 0.7); /* #D3D3D3 70% */
+    --color-bg-ft-act: rgba(245, 245, 245, 0.3); /* #F5F5F5 30% */
+    --color-bg-ft-inact: rgba(245, 245, 245, 0.1);  /* #F5F5F5 10% */
+}
+:root[data-theme="light"] {
+    --color-primary: #7836BA;
+    --blur-ball-color: rgba(120, 54, 186, 0.4); /* #7836BA 40% */
+    --color-bg: #F2F2F2;
+    --color-bg-alt: #FCFCFC;
+    --color-bg-ipt: #F2F2F2;
+    --color-bg-hvr: #D3D3D3 /*rgba(120, 54, 186, 0.7); /* #7836BA 70% */;
+    
+    --color-text: #1A131F;
+    --color-text-pr: #7836BA;
+    --color-text-bt: #F5F5F5;
+    --color-text-alt: #737373;
+    
+    --color-tx-ft-act: #737373;
+    --color-tx-ft-inact: rgba(115, 115, 115, 0.7); /* #737373 70% */
+    --color-bg-ft-act: #D4D4D4;
+    --color-bg-ft-inact: #E6E6E6;
+}
