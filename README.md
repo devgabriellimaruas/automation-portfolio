@@ -24,8 +24,8 @@ app
 │   └── components
 │       └── base.html
 │   └── about.html
-│   └── add_project.html
-│   └── contacts.html
+│   └── add_projects.html
+│   └── contact.html
 │   └── skills.html
 │   └── home.html
 │   └── projects.html
