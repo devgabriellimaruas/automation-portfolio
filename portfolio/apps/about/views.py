@@ -7,12 +7,12 @@ from .models import Tools
 # Create your views here.
 def about(request):
     tools = Tools.objects.all().order_by('order')
-    return render(request, 'about/about.html', {'tools': tools})
+    return render(request, 'about.html', {'tools': tools})
 
 
 def tools(request):
     tools = Tools.objects.all().order_by('order')
-    return render(request, 'about/tools.html', {'tools': tools})
+    return render(request, 'tools.html', {'tools': tools})
 
 
 def create_tool(request):
@@ -24,7 +24,7 @@ def create_tool(request):
     else:
         print(form.errors)
     tools = Tools.objects.all().order_by('order')
-    return render(request, 'about/tools.html', {'form': form, 'tools': tools})
+    return render(request, 'tools.html', {'form': form, 'tools': tools})
 
 
 def delete_tool(request, pk):

@@ -1,0 +1,54 @@
+.section-home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-avatar-mobile {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.perfil {
+    width: 48px;
+    height: 48px;
+}
+
+.nav-avatar {
+    display: none;
+}
+
+.pre-title {
+    font-weight: 400;
+}
+
+.name {
+    font-weight: 600;
+}
+
+
+@media (min-width: 1200px) {
+    .nav-avatar {
+        display: block;
+    }
+
+    .nav-avatar-mobile {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+}

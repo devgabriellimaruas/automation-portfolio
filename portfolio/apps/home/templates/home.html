@@ -1,0 +1,50 @@
+{% extends "components/base.html" %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/home.css' %}" />
+{% endblock %} {% block body_class %}home{% endblock %} {% block content %}
+
+<section class="section-home">
+  <a href="{% url 'home' %}" class="nav-avatar-mobile">
+    <img
+      src="{% static 'images/foto_perfil.jpg' %}"
+      alt="Foto de perfil"
+      class="perfil"
+    />
+  </a>
+
+  <h1 class="title">
+    <span class="pre-title">Olá, eu sou o </span>
+    <span class="name">Gabriel Lima</span>
+  </h1>
+  <p class="desc">
+    <span class="highlight">Desenvolvedor de automações</span> focado em
+    transformar <span class="highlight">tarefas manuais</span> e repetitivas em
+    <span class="highlight">soluções eficientes</span>,<br />
+    que aumentam a <span class="highlight">produtividade</span>, economizam
+    <span class="highlight">tempo</span> e melhoram a
+    <span class="highlight">performance</span> das operações.
+  </p>
+
+  <a href="/projects/" class="btn">Projetos</a>
+
+  <div class="icon">
+    <a
+      href="https://www.linkedin.com/in/devgabriellimaruas/"
+      target="_blank"
+      aria-label="LinkedIn"
+    >
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a
+      href="https://github.com/devgabriellimaruas"
+      target="_blank"
+      aria-label="GitHub"
+    >
+      <i class="fa-brands fa-github"></i>
+    </a>
+    <a href="/contact" aria-label="Email">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+</section>
+
+{% include "components/footer.html" %} {% endblock %}

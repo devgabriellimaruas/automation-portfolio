@@ -21,7 +21,7 @@ def projects(request):
 
     filters_list = ["Destaques", "RPA", "Dados", "Sistemas"]
 
-    return render(request, 'projects/projects.html', {
+    return render(request, 'projects.html', {
         'projects': projects_qs,
         'filters_list': filters_list,
         'filter_type': filter_type
@@ -32,7 +32,7 @@ def read_projects(request):
     tools = Tools.objects.all().order_by('order')
     projects = Project.objects.all()
 
-    return render(request, 'projects/read_projects.html', {
+    return render(request, 'read_projects.html', {
         'tools': tools,
         'projects': projects
     })
@@ -45,7 +45,7 @@ def view_project(request, pk):
     projects_qs = Project.objects.filter(
         type=current_project.type).exclude(pk=current_project.pk)
 
-    return render(request, 'projects/view_project.html', {
+    return render(request, 'view_projects.html', {
         'current_project': current_project,
         'projects': projects_qs,
         'tools_list': tools_list
@@ -64,11 +64,11 @@ def create_project(request):
             project.tools = ", ".join(selected_tools)
             project.save()
             messages.success(request, "Projeto adicionado com sucesso!")
-            return redirect('/projects/read/?status=success&msg=Projeto+adicionado+com+sucesso')
+            return redirect('/read/?status=success&msg=Projeto+adicionado+com+sucesso')
         else:
-            return redirect(f'/projects/read/?status=error&msg=Erro+ao+atualizar+o+projeto\n{form.errors}')
+            return redirect(f'/read/?status=error&msg=Erro+ao+atualizar+o+projeto\n{form.errors}')
 
-    return render(request, 'projects/read_projects.html', {
+    return render(request, 'read_projects.html', {
         'form': form,
         'tools': tools,
         'projects': projects,
@@ -87,9 +87,9 @@ def delete_project(request, pk):
     if request.method == 'POST':
         project = get_object_or_404(Project, pk=pk)
         project.delete()
-        return redirect('/projects/read/?status=success&msg=Projeto+deletado+com+sucesso')
+        return redirect('/read/?status=success&msg=Projeto+deletado+com+sucesso')
     else:
-        return redirect('/projects/read/?status=error&msg=Erro+ao+deletar+o+projeto')
+        return redirect('/read/?status=error&msg=Erro+ao+deletar+o+projeto')
 
 
 def update_project(request, pk):
@@ -108,13 +108,13 @@ def update_project(request, pk):
             updated_project.link_project = form.cleaned_data['link_project']
             updated_project.tools = ', '.join(request.POST.getlist('tools'))
             updated_project.save()
-            return redirect('/projects/read/?status=success&msg=Projeto+atualizado+com+sucesso')
+            return redirect('/read/?status=success&msg=Projeto+atualizado+com+sucesso')
         else:
-            return redirect(f'/projects/read/?status=error&msg=Erro+ao+atualizar+o+projeto\n{form.errors}')
+            return redirect(f'/read/?status=error&msg=Erro+ao+atualizar+o+projeto\n{form.errors}')
     else:
         form = ProjectForm(instance=project)
 
-    return render(request, 'projects/update_project.html', {
+    return render(request, 'update_projects.html', {
         'form': form,
         'tools': tools,
         'selected_tools': selected_tools,

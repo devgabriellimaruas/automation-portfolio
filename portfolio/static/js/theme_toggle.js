@@ -32,3 +32,17 @@ function updateIcon(button, html) {
     icon.classList.add('fa-moon');
   }
 }
+
+
+const toggleButton = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+toggleButton.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+})
+
+document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+})

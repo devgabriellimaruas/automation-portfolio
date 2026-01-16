@@ -2,35 +2,154 @@
     --color-primary: #5A199B;
     --blur-ball-color: rgba(90, 25, 155, 0.3);
     --color-bg: #1A131F;
-    --color-bg-alt: rgba(245, 245, 245, 0.1); /* #F5F5F5 10% */
+    --color-bg-alt: rgba(245, 245, 245, 0.1);
+    /* #F5F5F5 10% */
     --color-bg-ipt: #453F4B;
     --color-bg-hvr: #F5F5F5;
-    
+
     --color-text: #F5F5F5;
     --color-text-pr: #F5F5F5;
     --color-text-bt: #F5F5F5;
     --color-text-alt: #D3D3D3;
 
     --color-tx-ft-act: #D3D3D3;
-    --color-tx-ft-inact: rgba(211, 211, 211, 0.7); /* #D3D3D3 70% */
-    --color-bg-ft-act: rgba(245, 245, 245, 0.3); /* #F5F5F5 30% */
-    --color-bg-ft-inact: rgba(245, 245, 245, 0.1);  /* #F5F5F5 10% */
+    --color-tx-ft-inact: rgba(211, 211, 211, 0.7);
+    /* #D3D3D3 70% */
+    --color-bg-ft-act: rgba(245, 245, 245, 0.3);
+    /* #F5F5F5 30% */
+    --color-bg-ft-inact: rgba(245, 245, 245, 0.1);
+    /* #F5F5F5 10% */
 }
+
 :root[data-theme="light"] {
     --color-primary: #7836BA;
-    --blur-ball-color: rgba(120, 54, 186, 0.4); /* #7836BA 40% */
+    --blur-ball-color: rgba(120, 54, 186, 0.4);
+    /* #7836BA 40% */
     --color-bg: #F2F2F2;
     --color-bg-alt: #FCFCFC;
     --color-bg-ipt: #F2F2F2;
-    --color-bg-hvr: #D3D3D3 /*rgba(120, 54, 186, 0.7); /* #7836BA 70% */;
-    
+    --color-bg-hvr: #D3D3D3
+        /*rgba(120, 54, 186, 0.7); /* #7836BA 70% */
+    ;
+
     --color-text: #1A131F;
     --color-text-pr: #7836BA;
     --color-text-bt: #F5F5F5;
     --color-text-alt: #737373;
-    
+
     --color-tx-ft-act: #737373;
-    --color-tx-ft-inact: rgba(115, 115, 115, 0.7); /* #737373 70% */
+    --color-tx-ft-inact: rgba(115, 115, 115, 0.7);
+    /* #737373 70% */
     --color-bg-ft-act: #D4D4D4;
     --color-bg-ft-inact: #E6E6E6;
+}
+
+/* font-weight: 400; Regular */
+/* font-weight: 500; Medium */
+/* font-weight: 600; Semi-bold */
+/* font-weight: 700; Bold */
+
+:root {
+    /* ===== TIPOGRAFIA ===== */
+    --fs-title: 38px;
+    --fs-subtitle: 26px;
+    --fs-text: 14px;
+    --fs-desc: 12px;
+
+    /* ===== BUTTONS ===== */
+    --btn-width: 232px --btn-height: 50px
+}
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./pages/about.css";
+@import "./pages/contact.css";
+@import "./pages/home.css";
+@import "./pages/projects.css";
+@import "./pages/skills.css";
+
+/* div--knowledge wr75px */
+.knowledge-item {
+    width: 75px;
+}
+
+/* div-bg--skills r8px */
+.skills-card {
+    border-radius: 8px;
+}
+
+/* filters pad8px */
+.filters {
+    padding: 8px;
+}
+
+/* project-bg w333px h370px */
+.project-bg {
+    width: 333px;
+    height: 370px;
+}
+
+/* project-card__image h200px */
+.project-card__image {
+    height: 200px;
+}
+
+/* project-card__desc fs13px */
+.project-card__desc {
+    font-size: 13px;
+}
+
+/* project-card__action wr24px r8px */
+.project-card__action {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+}
+
+/* icon--right wr9px */
+.icon--right {
+    width: 9px;
+    height: 9px;
+}
+
+/* project-card__tags w76px h20px */
+.project-card__tags {
+    width: 76px;
+    height: 20px;
+}
+
+/* section--contact w333px h518px pad20px */
+
+
+/* input w283px h50px */
+
+
+/* input--textarea w283px h120px */
+.input--textarea {
+    width: 283px;
+    height: 120px;
+}
+
+/* project-view__image w333px h388 */
+.project-view__image {
+    width: 333px;
+    height: 388px;
+}
+
+/* project-view__tags w124px h30px */
+.project-view__tags {
+    width: 124px;
+    height: 30px;
+}
+
+/* project-mini w333px h70px */
+.project-mini {
+    width: 333px;
+    height: 70px;
+}
+
+/* project-mini__image wr70px */
+.project-mini__image {
+    width: 70px;
+    height: 70px;
 }

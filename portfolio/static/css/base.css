@@ -1,0 +1,315 @@
+/* ===== GENERAL ===== */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--color-bg);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+section {
+    margin: 22px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.title {
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--color-text-pr) !important;
+    margin: 20px 0 0 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 26px;
+}
+
+.pre-subtitle{
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.subtitle-text{
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.minitext {
+    font-size: 12px;
+    text-align: center;
+    padding: 30px;
+    background: transparent;
+    font-size: var(--fs-desc);
+    color: var(--color-text-alt);
+}
+
+.minitext-text {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.minitext-name {
+    font-weight: 600;
+    color: inherit;
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+/* ===== COMPONENTS ===== */
+.btn {
+    width: 232px;
+    height: 50px;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text-bt);
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    background-color: var(--color-primary);
+    text-align: center;
+}
+
+.btn-back {
+    background-color: var(--color-bg-alt);
+    margin-left: 20px;
+}
+
+.btn:disabled,
+.btn-back:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn:not(:disabled):hover,
+.btn:not(:disabled):focus-visible,
+.btn-back:not(:disabled):hover,
+.btn-back:not(:disabled):focus-visible {
+  background-color: var(--color-bg-hvr);
+  color: var(--color-primary);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 40px;
+}
+
+.icon a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon a:hover {
+    color: var(--color-bg-hvr);
+    cursor: pointer;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 32px;
+    cursor: pointer;
+    margin-right: 22px;
+}
+
+.tags {
+    display: inline-block;
+    font-size: 16px;
+    padding: 6px 22px;
+    margin: 0px 20px 18px 0px;
+    border-radius: 8px;
+    font-weight: 400;
+    border: 1.5px solid var(--color-primary);
+}
+
+.input {
+    width: 283px;
+    height: 50px;
+}
+
+.project-card {
+    padding: 20px;
+}
+
+/* ===== TOKENS ===== */
+/* == Tablet ≥ 768px == */
+@media (min-width: 768px) {
+
+}
+/* == Notebook ≥ 1280px == */
+@media (min-width: 1280px) {
+
+}
+/* == Desktop ≥ 1440px == */
+@media (min-width: 1440px) {
+
+}
+
+
+
+/* =======================
+   LAYOUT
+======================= */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 16px;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+
+
+/* MENU FECHADO */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 80px 24px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+/* MENU ABERTO */
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-link {
+    font-size: 18px;
+}
+
+/* =======================
+   PROFILE
+======================= */
+.perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* =======================
+   TABLE ICONS
+======================= */
+td a i {
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+/* =======================
+   BLUR BACKGROUND
+======================= */
+.blur-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.blur-ball {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    background-color: var(--blur-ball-color);
+    opacity: 0.6;
+}
+
+
+/* ===== Home ===== */
+body.home .ball1 { width: 274px; height: 274px; left: 86.57vw; top: 8.56vh; }
+body.home .ball2 { width: 131px; height: 131px; left: 87.15vw; top: 33.22vh; }
+body.home .ball3 { width: 131px; height: 131px; left: -2.36vw; top: 90.11vh; }
+
+/* ===== About ===== */
+body.about .ball1 { width: 274px; height: 274px; left: 31.18vw; top: 35.67vh; }
+body.about .ball2 { width: 131px; height: 131px; left: 44.17vw; top: 30.89vh; }
+body.about .ball3 { width: 131px; height: 131px; left: -3.68vw; top: -5.78vh; }
+
+/* ===== Skills ===== */
+body.skills .ball1 { width: 274px; height: 274px; left: 75.28vw; top: 35.67vh; }
+body.skills .ball2 { width: 131px; height: 131px; left: 88.40vw; top: 30.89vh; }
+body.skills .ball3 { width: 131px; height: 131px; left: 3.68vw; top: 47.78vh; }
+
+/* ===== Projects ===== */
+body.projects .ball1 { width: 274px; height: 274px; left: 14.58vw; top: 25.78vh; }
+body.projects .ball2 { width: 131px; height: 131px; left: 13.68vw; top: 21.00vh; }
+body.projects .ball3 { width: 131px; height: 131px; left: 72.85vw; top: 75.00vh; }
+
+/* ===== Contacts ===== */
+body.contacts .ball1 { width: 274px; height: 274px; left: 75.28vw; top: 35.67vh; }
+body.contacts .ball2 { width: 131px; height: 131px; left: 88.40vw; top: 30.89vh; }
+body.contacts .ball3 { width: 131px; height: 131px; left: 3.68vw; top: 47.78vh; }
