@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    margin-top: 50px;
 }
 
 .tags-list {

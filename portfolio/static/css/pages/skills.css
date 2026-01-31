@@ -3,31 +3,42 @@
 }
 
 .skills {
-    max-width: auto;
     flex-direction: column;
 }
 
 .cards-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    margin-top: 20px;
 }
 
 .card {
     border-radius: 8px;
     max-width: 330px;
+    margin: 10px 0 10px 0;
+    padding: 25px 25px 40px 25px;
+    background-color: var(--color-bg-alt);
 }
 
-.card-title {
-    margin: 20px 0 10px;
+.card-header {
+    margin: 0 0 15px;
     font-size: 24px;
     font-weight: 600;
     color: var(--color-text);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.material-symbols-outlined {
-    font-size: 50px !important;
+.card-title {
+    margin: 0;
+}
+
+.card-header .material-symbols-outlined {
+    font-size: 40px !important;
     color: var(--color-primary);
     display: flex;
     margin: 0;

@@ -8,17 +8,15 @@
     background: var(--color-bg-alt);
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 150px;
-    padding: 50px;
+    padding: 25px;
     max-width: 100%;
+    margin-top: 20px;
 }
 
-.contact-info {
-    flex: 1;
-    color: var(--color-text-pr);
-    margin: 0 auto;
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .contact-content form {
@@ -27,10 +25,21 @@
 }
 
 .contact-title {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.contact-content .desc{
+    text-align: start !important;
+    margin-bottom: 20px !important;
 }
 
 .contact-desc {
@@ -41,37 +50,11 @@
     margin-bottom: 60px;
 }
 
-.contact-links {
-    color: var(--color-text);
-    font-weight: 400;
-    font-size: 18px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.contact-content .icon{
+    margin: 20px !important;
 }
-
-.contact-links p {
-    margin: 0;
-}
-
-.contact-links a {
-    color: var(--color-text);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.contact-links a:hover {
-    color: var(--color-primary);
-    transition: color 0.3s;
-}
-
-.contact-links i {
-    color: var(--color-text-pr) !important;
-    font-size: 30px;
-    margin-right: 16px;
-    vertical-align: middle;
-    color: inherit;
+.contact-content a{
+    color: var(--color-text) !important;
 }
 
 #contactForm {
@@ -85,13 +68,18 @@ textarea {
     margin: 0;
     padding: 20px 25px;
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
     border-radius: 8px;
     border: none;
     box-sizing: border-box;
-    color: var(--color-text-alt);
+    color: var(--color-text) !important; 
     background-color: var(--color-bg-ipt);
     font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+    color: var(--color-text-alt);
+    opacity: 1; /* importante p/ Firefox */
 }
 
 input:focus,
@@ -99,9 +87,8 @@ textarea:focus {
     outline: none;
 }
 
-#contactForm button {
-    display: flex;
-    margin-left: auto;
+#contactForm .btn {
+    width: 100%;
 }
 
 #message-popup {
@@ -113,7 +100,7 @@ textarea:focus {
 
 #message-popup .popup {
     background-color: var(--color-bg-alt);
-    color: var(--color-text);
+    color: var(--color-text-bt);
     padding: 12px 20px;
     border-radius: 5px;
     margin-bottom: 10px;

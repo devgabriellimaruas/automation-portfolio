@@ -10,11 +10,9 @@ from .forms import ProjectForm
 
 
 def projects(request):
-    filter_type = request.GET.get('type')
-    if filter_type:
-        projects_qs = Project.objects.filter(type=filter_type)
-    else:
-        projects_qs = Project.objects.all()
+    filter_type = request.GET.get('type', 'Destaques')
+
+    projects_qs = Project.objects.filter(type=filter_type)
 
     for project in projects_qs:
         project.tools_list = project.tools.split(',') if project.tools else []
@@ -26,6 +24,7 @@ def projects(request):
         'filters_list': filters_list,
         'filter_type': filter_type
     })
+
 
 
 def read_projects(request):
@@ -45,7 +44,7 @@ def view_project(request, pk):
     projects_qs = Project.objects.filter(
         type=current_project.type).exclude(pk=current_project.pk)
 
-    return render(request, 'view_projects.html', {
+    return render(request, 'view_project.html', {
         'current_project': current_project,
         'projects': projects_qs,
         'tools_list': tools_list
@@ -53,26 +52,34 @@ def view_project(request, pk):
 
 
 def create_project(request):
+    tools = Tools.objects.all().order_by('order')
+    projects = Project.objects.all()
+
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
-        tools = Tools.objects.all().order_by('order')
-        projects = Project.objects.all()
 
         if form.is_valid():
+            print("valido")
             project = form.save(commit=False)
             selected_tools = request.POST.getlist("tools")
             project.tools = ", ".join(selected_tools)
             project.save()
-            messages.success(request, "Projeto adicionado com sucesso!")
-            return redirect('/read/?status=success&msg=Projeto+adicionado+com+sucesso')
+            print("projecto criado")
+            return redirect('projects')
         else:
-            return redirect(f'/read/?status=error&msg=Erro+ao+atualizar+o+projeto\n{form.errors}')
-
-    return render(request, 'read_projects.html', {
-        'form': form,
-        'tools': tools,
-        'projects': projects,
-    })
+            print(f"error: {form.errors}")
+            return render(request, 'read_projects.html', {
+                'form': form,
+                'tools': tools,
+                'projects': projects,
+            })
+    else:
+        form = ProjectForm()
+        return render(request, 'read_projects.html', {
+            'form': form,
+            'tools': tools,
+            'projects': projects,
+        })
 
 
 @receiver(post_delete, sender=Project)
@@ -114,7 +121,7 @@ def update_project(request, pk):
     else:
         form = ProjectForm(instance=project)
 
-    return render(request, 'update_projects.html', {
+    return render(request, 'project/update_projects.html', {
         'form': form,
         'tools': tools,
         'selected_tools': selected_tools,

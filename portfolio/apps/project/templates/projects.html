@@ -10,10 +10,7 @@
       <div class="filter-projects">
         <span>Exibir:</span>
         {% for filter in filters_list %}
-        <label
-          class="filter-btn {% if filter_type == filter %}active{% endif %}"
-          data-type="{{ filter }}"
-        >
+        <label class="filter-btn {% if filter_type == filter %}active{% endif %}" data-type="{{ filter }}">
           {% if filter == "Destaques" %}
           <i class="fa-solid fa-star"></i>
           {% endif %} {{ filter }}
@@ -24,13 +21,13 @@
 
     {% if projects %}
     <div class="projects-grid">
-      {% for project in projects %} {% include "components/project_card.html"
-      with project=project %} {% endfor %}
+      {% for project in projects %}
+      {% include "components/project_card.html" with project=project %} {% endfor %}
     </div>
     {% else %}
     <p class="not-found">
-      😎 Nenhum projeto por aqui ainda<br />
-      Mas calma, boas coisas estão a caminho!
+      Nenhum projeto por aqui<br />
+      Mas calma, coisas boas estão a caminho!
     </p>
     {% endif %}
   </div>

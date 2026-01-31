@@ -11,16 +11,12 @@ body {
 
 body {
     background-color: var(--color-bg);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-size: 14px;
     color: var(--color-text);
-}
-
-section {
-    margin: 22px;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -45,6 +41,13 @@ section {
 .subtitle-text{
     color: var(--color-text);
     font-weight: 500;
+}
+
+.minititle{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: center;
 }
 
 .desc {
@@ -98,7 +101,14 @@ section {
 
 .btn-back {
     background-color: var(--color-bg-alt);
-    margin-left: 20px;
+    display: inline-block;
+    padding: 16px 32px;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
 }
 
 .btn:disabled,
@@ -139,12 +149,12 @@ section {
 }
 
 .menu-toggle {
+    margin-left: auto;
     background: none;
     border: none;
     color: var(--color-text);
     font-size: 32px;
     cursor: pointer;
-    margin-right: 22px;
 }
 
 .tags {
@@ -160,10 +170,6 @@ section {
 .input {
     width: 283px;
     height: 50px;
-}
-
-.project-card {
-    padding: 20px;
 }
 
 /* ===== TOKENS ===== */
@@ -190,32 +196,14 @@ section {
     flex-direction: column;
     width: 100%;
     padding: 0 16px;
+    margin-top: 20px;
 }
 
 /* =======================
-   NAVBAR
+   NAVBAR (MENU FECHADO)
 ======================= */
 nav {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 16px;
-    padding: 24px 0;
-}
-
-.nav-link {
-    font-size: 14px;
-    color: var(--color-text);
-    text-decoration: none;
-}
-
-.nav-link.active {
-    color: var(--color-primary);
-    font-weight: 500;
-}
-
-.nav-link:hover {
-    color: var(--color-primary);
+    width: 100%;
 }
 
 .navbar {
@@ -225,31 +213,104 @@ nav {
     padding: 16px;
 }
 
+/* esquerda: foto + nome */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
+.perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-/* MENU FECHADO */
+.nav-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+/* botão menu */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle .material-symbols-outlined {
+    font-size: 28px;
+    color: var(--color-text);
+}
+
+/* =======================
+   MENU MOBILE (ABERTO / FECHADO)
+======================= */
 .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
+    left: 0;
+    width: 100vw;
     background: var(--color-bg);
+
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 24px;
-    padding: 80px 24px;
-    transition: right 0.3s ease;
+
+    padding: 24px;
+
+    /* estado fechado */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
     z-index: 1000;
 }
 
-/* MENU ABERTO */
 .nav-menu.active {
-    right: 0;
+    transform: translateY(0);
 }
 
+/* =======================
+   HEADER DO MENU ABERTO
+======================= */
+.nav-menu-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* botão fechar */
+.menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 24px;
+    color: var(--color-text);
+}
+
+/* =======================
+   LINKS
+======================= */
 .nav-link {
-    font-size: 18px;
+    font-size: 16px;
+    color: var(--color-text);
+    text-decoration: none;
+    width: 100%;
+    text-align: right;
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
 }
 
 /* =======================
